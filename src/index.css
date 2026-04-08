@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-200 antialiased;
+  }
+}
+
+.layout-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom styles for animations */
+.node-visited {
+  animation: visitedAnim 0.5s ease-out forwards;
+}
+
+@keyframes visitedAnim {
+  0% { transform: scale(0.3); background-color: rgba(59, 130, 246, 0.75); border-radius: 100%; }
+  50% { background-color: rgba(147, 197, 253, 0.75); }
+  100% { transform: scale(1); background-color: rgba(59, 130, 246, 1); border-color: rgba(30, 64, 175, 1); }
+}
+
+.node-path {
+  animation: pathAnim 0.5s ease-out forwards;
+}
+
+@keyframes pathAnim {
+  0% { transform: scale(0.6); background-color: rgba(250, 204, 21, 0.5); border-radius: 100%; }
+  100% { transform: scale(1); background-color: rgba(250, 204, 21, 1); border-color: rgba(161, 98, 7, 1); }
+}
+
+/* Hide scrollbar for step panels */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
